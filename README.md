@@ -1,0 +1,1 @@
+# This is a microblogging sample app built using RoR.
