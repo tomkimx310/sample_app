@@ -123,4 +123,12 @@ describe User do
   		specify { user_for_invalid_password.should be_false }
   	end
   end
+
+  describe "accessible attributes" do
+    it "should not allow access to admin" do
+      expect do
+        User.new(admin: true)
+      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
+    end
+  end
 end

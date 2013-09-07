@@ -11,6 +11,12 @@ describe "AuthenticationPages" do
     it { should have_selector('title',	text: "Sign in") }
   end
 
+  #describe "should not have show profile and settings in menu" do
+   
+  #	it { should_not have_link('Profile', 		href: user_path(user)) }
+  #	it { should_not have_link('Settings', 	href: edit_user_path(user)) }
+  #end
+
   describe "signin" do
   	before { visit signin_path }
 
