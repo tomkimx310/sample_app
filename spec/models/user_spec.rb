@@ -27,6 +27,7 @@ describe User do
   it { should respond_to(:authenticate) }
   it { should respond_to(:microposts) }
   it { should respond_to(:feed) }
+  it { should respond_to(:relationships) }
 
   it { should be_valid }
   it { should_not be_admin }
@@ -126,13 +127,6 @@ describe User do
   	end
   end
 
-<<<<<<< HEAD
-  describe "accessible attributes" do
-    it "should not allow access to admin" do
-      expect do
-        User.new(admin: true)
-      end.to raise_error(ActiveModel::MassAssignmentSecurity::Error)
-=======
   describe "micropost associations" do
 
     before { @user.save }
@@ -164,7 +158,6 @@ describe User do
       its(:feed) { should include(newer_micropost) }
       its(:feed) { should include(older_micropost) }
       its(:feed) { should_not include(unfollowed_post) }
->>>>>>> user-microposts
     end
   end
 end

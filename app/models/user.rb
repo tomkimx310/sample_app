@@ -11,12 +11,10 @@
 
 class User < ActiveRecord::Base
   attr_accessible :email, :name, :password, :password_confirmation
-<<<<<<< HEAD
   attr_protected :admin
 
-=======
   has_many :microposts, dependent: :destroy
->>>>>>> user-microposts
+  has_many :relationships, foreign_key: "follower_id", dependent: :destroy
   has_secure_password
 
   before_save { |user| user.email = email.downcase }
@@ -37,4 +35,5 @@ class User < ActiveRecord::Base
   	def create_remember_token
   		self.remember_token = SecureRandom.urlsafe_base64
   	end
+
 end
