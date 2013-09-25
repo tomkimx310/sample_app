@@ -24,7 +24,7 @@ ActiveRecord::Schema.define(:version => 20130918003758) do
 
   create_table "relationships", :force => true do |t|
     t.integer  "follower_id"
-    t.integer  "followed_by"
+    t.integer  "followed_id"
     t.datetime "created_at",  :null => false
     t.datetime "updated_at",  :null => false
   end
